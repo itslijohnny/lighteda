@@ -1,2 +1,3 @@
 # lighteda
-LightEDA is a python package for Exploratory Data Analysis.
+LightEDA is a light python package that simplify the Exploratory Data Analysis tasks.
+[Project package](https://github.com/j84lee/lighteda)
