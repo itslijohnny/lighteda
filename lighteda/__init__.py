@@ -43,7 +43,7 @@ def readcsv_poc(fileadress, poc=True, reduce=True, samplesize=0.01, **csv_prm):
         print('Read {} out of {} rows of the dataset.'.format(int(s*n),n))
     else:
         df = pd.read_csv(fileadress, **csv_prm)
-    if reduce = True:
+    if reduce == True:
         reduce_mem_usage(df)
     return df
 

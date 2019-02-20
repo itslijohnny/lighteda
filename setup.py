@@ -3,7 +3,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
      name='lighteda',
-     version='0.0.2',
+     version='0.0.3',
      # scripts=['dokr'],
      author="Johnny Li",
      author_email="l.johnny@outlook.com",
