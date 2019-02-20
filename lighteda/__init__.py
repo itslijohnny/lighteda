@@ -76,3 +76,12 @@ def reduce_mem_usage(df, verbose=True):
     end_mem = df.memory_usage().sum() / 1024**2
     if verbose: print('Mem. usage decreased to {:5.2f} Mb ({:.1f}% reduction)'.format(end_mem, 100 * (start_mem - end_mem) / start_mem))
     return df
+
+def data_stats(df):
+    import pandas as pd
+    col = []
+    for c in df.columns:
+        col.append((c, df[c].nunique(), df[c].isnull().sum()/df.shape[0], df[c].value_counts(normalize=True, dropna=False).values[0], df[c].dtype))
+    ds = pd.DataFrame(col, columns=['Columns', 'Unique Values', '% of Missing Values', '% of Values in One Category', 'Data Type'])
+    ds = ds.sort_values('% of Missing Values', ascending=False)
+    return ds
