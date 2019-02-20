@@ -1,4 +1,4 @@
-def readcsv_poc(fileadress,poc=True,samplesize=0.01,**csv_prm):
+def readcsv_poc(fileadress, poc=True, reduce=True, samplesize=0.01, **csv_prm):
     """This is my a csv file reading function. It included POC and reduce memory
     usageself.
 
@@ -8,6 +8,8 @@ def readcsv_poc(fileadress,poc=True,samplesize=0.01,**csv_prm):
         The path and name of the CSV file.
     poc : type
         Indicater of wether this importing is prove of concept.
+    reduce : type
+        If reduce memory usage.
     samplesize : type
         Indicate how much of the protion of imprting data sampled.
     **csv_prm : type
@@ -41,7 +43,8 @@ def readcsv_poc(fileadress,poc=True,samplesize=0.01,**csv_prm):
         print('Read {} out of {} rows of the dataset.'.format(int(s*n),n))
     else:
         df = pd.read_csv(fileadress, **csv_prm)
-    reduce_mem_usage(df)
+    if reduce = True:
+        reduce_mem_usage(df)
     return df
 
 
